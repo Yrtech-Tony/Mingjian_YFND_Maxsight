@@ -670,7 +670,7 @@ namespace XHX.View
 
                                 MemoryStream buf = new MemoryStream(image);
                                 Image picimage = Image.FromStream(buf, true);
-                                picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+@"\"+  picName[0].Replace(".jpg","")+".jpg");
+                                picimage.Save(tbnFilePath.Text + @"\" + shop.ShopCode+"_"+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+@"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+"_1"+".jpg");
                             }
                         }
                         else
@@ -682,7 +682,7 @@ namespace XHX.View
                                 {
                                     MemoryStream buf = new MemoryStream(image);
                                     Image picimage = Image.FromStream(buf, true);
-                                    picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+@"\"+  picName[j].Replace(".jpg","")+".jpg");
+                                    picimage.Save(tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString()+"_"+(i+1).ToString() + ".jpg");
                                 }
                             }
                         }
