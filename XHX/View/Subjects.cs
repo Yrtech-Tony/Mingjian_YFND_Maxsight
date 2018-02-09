@@ -361,7 +361,7 @@ namespace XHX.View
                         }
                         if (sub.OrderNO == subj.OrderNO && subj.StatusType != 'D')
                         {
-                            // CommonHandler.ShowMessage(MessageType.Information, "序号重复");
+                            CommonHandler.ShowMessage(MessageType.Information, "序号重复");
                             grvSubject.FocusedColumn = gridColumn9;
                             grvSubject.FocusedRowHandle = (grcSubject.DataSource as List<SubjectDto>).IndexOf(sub);
                             return;
