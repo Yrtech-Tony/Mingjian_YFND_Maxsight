@@ -1737,7 +1737,7 @@ namespace XHX.View
             InspectionStandardDto dto = grvFileAndPic.GetRow(grvFileAndPic.FocusedRowHandle) as InspectionStandardDto;
             try
             {
-                service.DeletePicture(txtShopName.Text, dto.FileName, SubjectCode_Golbal);
+                service.DeletePicture(ProjectCode_Golbal+txtShopName.Text, dto.FileName, SubjectCode_Golbal);
                 string appDomainPath = AppDomain.CurrentDomain.BaseDirectory;
                 string filePath = appDomainPath + @"UploadImage\" + txtShopName.Text + @"\" + dto.FileName + ".jpg";
                 if (File.Exists(filePath))
