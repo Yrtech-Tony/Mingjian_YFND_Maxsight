@@ -1320,6 +1320,11 @@ namespace XHX.View
             string strList = "";
 
             DataSet ds = service.GetNotAnswerSubject(ProjectCode_Golbal, ShopCode_Golbal);
+            if (ds == null || ds.Tables.Count == 0)
+            {
+                CommonHandler.ShowMessage(MessageType.Information, "未设置试卷类型");
+                return;
+            }
             if (ds.Tables[0].Rows.Count > 0)
             {
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -1732,7 +1737,7 @@ namespace XHX.View
             InspectionStandardDto dto = grvFileAndPic.GetRow(grvFileAndPic.FocusedRowHandle) as InspectionStandardDto;
             try
             {
-                service.DeletePicture(txtShopName.Text, dto.FileName, SubjectCode_Golbal);
+                service.DeletePicture(ProjectCode_Golbal+txtShopName.Text, dto.FileName, SubjectCode_Golbal);
                 string appDomainPath = AppDomain.CurrentDomain.BaseDirectory;
                 string filePath = appDomainPath + @"UploadImage\" + txtShopName.Text + @"\" + dto.FileName + ".jpg";
                 if (File.Exists(filePath))

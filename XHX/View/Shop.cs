@@ -159,7 +159,7 @@ namespace XHX.View
         {
             List<ShopDto> shopList = new List<ShopDto>();
             DataSet ds = webService.SearchShop("", txtShopName.Text);
-            if (ds.Tables[0].Rows.Count > 0)
+             if (ds.Tables[0].Rows.Count > 0)
             {
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
