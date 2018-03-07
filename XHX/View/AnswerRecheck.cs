@@ -229,30 +229,30 @@ namespace XHX.View
             }
 
             RecheckStatus();
-            if (MenumName == "流程演练")
-            {
-                CheckType = 'A';
+            //if (MenumName == "流程演练")
+            //{
+            //    CheckType = 'A';
 
-                btnTransfer.Enabled = true;
+            //    btnTransfer.Enabled = true;
 
-                StartCheck('A', ButtonType.FirstReCheck);
-            }
-            else if (MenumName == "人员和单据")
-            {
-                CheckType = 'B';
+            //    StartCheck('A', ButtonType.FirstReCheck);
+            //}
+            //else if (MenumName == "人员和单据")
+            //{
+            //    CheckType = 'B';
 
-                btnTransfer.Enabled = true;
+            //    btnTransfer.Enabled = true;
 
-                StartCheck('B', ButtonType.SecondReChek);
-            }
-            else if (MenumName == "硬件")
-            {
+            //    StartCheck('B', ButtonType.SecondReChek);
+            //}
+            //else if (MenumName == "硬件")
+            //{
                 CheckType = 'C';
 
                 btnTransfer.Enabled = true;
 
                 StartCheck('C', ButtonType.ThirdReCheck);
-            }
+            //}
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -1271,21 +1271,22 @@ namespace XHX.View
             }
             if (CommonHandler.ShowMessage(MessageType.Confirm, "确定复审完毕吗？") == DialogResult.Yes)
             {
-                if (MenumName == "流程演练")
-                {
-                    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SA", this.UserInfoDto.UserID);
+                //if (MenumName == "流程演练")
+                //{
+                //    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SA", this.UserInfoDto.UserID);
 
-                }
-                else if (MenumName == "人员和单据")
-                {
-                    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SB", this.UserInfoDto.UserID);
+                //}
+                //else if (MenumName == "人员和单据")
+                //{
+                //    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SB", this.UserInfoDto.UserID);
 
-                }
-                else if (MenumName == "硬件")
-                {
-                    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SC", this.UserInfoDto.UserID);
+                //}
+                //else if (MenumName == "硬件")
+                //{
+                //    service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "SC", this.UserInfoDto.UserID);
 
-                }
+                //}
+                service.RechekComplete(ProjectCode_Golbal, ShopCode_Golbal, "S2", this.UserInfoDto.UserID);
                 //所有的都通过复审的话，自动保存为一审修改完毕
                 if (Convert.ToInt32(service.CheckShopAllPassRechk(ProjectCode_Golbal, ShopCode_Golbal, "07").Tables[0].Rows[0]["NotPassCount"]) == 0)
                 {

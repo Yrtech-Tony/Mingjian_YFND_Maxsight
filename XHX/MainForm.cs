@@ -79,12 +79,14 @@ namespace XHX
 
 
             mainMenu = new ToolStripMenuItem("复审");
-            subMenu = new ToolStripMenuItem("流程演练", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
+            subMenu = new ToolStripMenuItem("复审", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
             mainMenu.DropDownItems.Add(subMenu);
-            subMenu = new ToolStripMenuItem("人员和单据", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
-            mainMenu.DropDownItems.Add(subMenu);
-            subMenu = new ToolStripMenuItem("硬件", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
-            mainMenu.DropDownItems.Add(subMenu);
+            //subMenu = new ToolStripMenuItem("流程演练", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
+            //mainMenu.DropDownItems.Add(subMenu);
+            //subMenu = new ToolStripMenuItem("人员和单据", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
+            //mainMenu.DropDownItems.Add(subMenu);
+            //subMenu = new ToolStripMenuItem("硬件", null, new EventHandler(menu_Click)); subMenu.Tag = "AnswerRecheck";
+            //mainMenu.DropDownItems.Add(subMenu);
             ms.Items.Add(mainMenu);
 
 
