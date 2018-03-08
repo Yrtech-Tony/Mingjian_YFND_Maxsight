@@ -147,7 +147,7 @@ namespace XHX.View
         public bool RecheckStatus()
         {
             DataSet ds = service.SearchRecheckStatus(ProjectCode_Golbal, ShopCode_Golbal);
-            if (ds.Tables[0].Rows.Count > 0||cboProjects.SelectedIndex!=0)
+            if (ds.Tables[0].Rows.Count > 0)
             {
                 btnSpecialCaseApply.Enabled = false;
                 grcFileAndPic.DragEnter -= new DragEventHandler(grcFileAndPic_DragEnter);
@@ -812,11 +812,11 @@ namespace XHX.View
             {
                 e.Cancel = true;
             }
-            if ((cboProjects.SelectedIndex!=0) && (grvFileAndPic.FocusedColumn == gcBrower || grvFileAndPic.FocusedColumn == gcDelete 
-                                    ))
-            {
-                e.Cancel = true;
-            }
+            //if ((cboProjects.SelectedIndex!=0) && (grvFileAndPic.FocusedColumn == gcBrower || grvFileAndPic.FocusedColumn == gcDelete 
+            //                        ))
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void btnViewPicture_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
