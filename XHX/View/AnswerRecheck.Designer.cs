@@ -33,6 +33,7 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkStandardError = new System.Windows.Forms.CheckBox();
             this.chkSystem = new System.Windows.Forms.CheckBox();
             this.chkPic = new System.Windows.Forms.CheckBox();
             this.chkDesc = new System.Windows.Forms.CheckBox();
@@ -120,7 +121,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnReCheckFinish = new DevExpress.XtraEditors.SimpleButton();
             this.btnRecheck = new DevExpress.XtraEditors.SimpleButton();
-            this.chkStandardError = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -255,6 +255,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 166);
             this.panel1.TabIndex = 83;
+            // 
+            // chkStandardError
+            // 
+            this.chkStandardError.AutoSize = true;
+            this.chkStandardError.Location = new System.Drawing.Point(166, 51);
+            this.chkStandardError.Name = "chkStandardError";
+            this.chkStandardError.Size = new System.Drawing.Size(96, 16);
+            this.chkStandardError.TabIndex = 90;
+            this.chkStandardError.Text = "检查结果错误";
+            this.chkStandardError.UseVisualStyleBackColor = true;
             // 
             // chkSystem
             // 
@@ -1095,18 +1105,8 @@
             this.btnRecheck.Name = "btnRecheck";
             this.btnRecheck.Size = new System.Drawing.Size(101, 23);
             this.btnRecheck.TabIndex = 0;
-            this.btnRecheck.Text = "开始第X次复审";
+            this.btnRecheck.Text = "开始复审";
             this.btnRecheck.Click += new System.EventHandler(this.btnAnswerStart_Click);
-            // 
-            // chkStandardError
-            // 
-            this.chkStandardError.AutoSize = true;
-            this.chkStandardError.Location = new System.Drawing.Point(166, 51);
-            this.chkStandardError.Name = "chkStandardError";
-            this.chkStandardError.Size = new System.Drawing.Size(96, 16);
-            this.chkStandardError.TabIndex = 90;
-            this.chkStandardError.Text = "检查结果错误";
-            this.chkStandardError.UseVisualStyleBackColor = true;
             // 
             // AnswerRecheck
             // 

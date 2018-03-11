@@ -699,7 +699,7 @@ namespace XHX.View
 
                 else if (buttonType == ButtonType.ThirdReCheck)
                 {
-                    CommonHandler.ShowMessage(MessageType.Information, "单据复查已经完毕，可以使用跳转功能来查看！");
+                    CommonHandler.ShowMessage(MessageType.Information, "复查已经完毕，可以使用跳转功能来查看！");
                     return false;
                 }
 

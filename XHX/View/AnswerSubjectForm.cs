@@ -385,7 +385,8 @@ namespace XHX.View
             ShopCode_Golbal = btnShopCode.Text;
             //RecheckStatus();
             /*在查看复审意见页面进来的时候可以进行修改*/
-            if (_UserInfoDto.RoleType == "S" && _pageName == "ShopScoreSearch")
+            if (_UserInfoDto.RoleType == "S" //&& _pageName == "ShopScoreSearch"
+                )
             {
                 txtScore.Enabled = true;
                 chkNotinvolved.Enabled = true;
