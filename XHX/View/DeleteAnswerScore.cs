@@ -138,7 +138,7 @@ namespace XHX.View
                     {
                         foreach (SubjectDto subject in list_subject)
                         {
-                            service.DeleteAnserForError(CommonHandler.GetComboBoxSelectedValue(cboProject).ToString(), shop.ShopCode, subject.SubjectCode);
+                            service.DeleteAnserForError(CommonHandler.GetComboBoxSelectedValue(cboProject).ToString(), shop.ShopCode, subject.SubjectCode,checkBox1.Checked);
                         }
                     }
                     CommonHandler.ShowMessage(MessageType.Information, "É¾³ý³É¹¦");

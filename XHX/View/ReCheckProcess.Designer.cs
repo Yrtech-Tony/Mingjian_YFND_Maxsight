@@ -110,7 +110,7 @@
             this.grdShop.Location = new System.Drawing.Point(5, 5);
             this.grdShop.Margin = new System.Windows.Forms.Padding(0);
             this.grdShop.Name = "grdShop";
-            this.grdShop.Size = new System.Drawing.Size(988, 42);
+            this.grdShop.Size = new System.Drawing.Size(1038, 42);
             this.grdShop.TabIndex = 31;
             // 
             // cboProjects
@@ -163,7 +163,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelControl2.Location = new System.Drawing.Point(5, 47);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(988, 5);
+            this.labelControl2.Size = new System.Drawing.Size(1038, 5);
             this.labelControl2.TabIndex = 33;
             // 
             // splitContainer1
@@ -179,8 +179,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grcRecheckProcessDtl);
-            this.splitContainer1.Size = new System.Drawing.Size(988, 556);
-            this.splitContainer1.SplitterDistance = 454;
+            this.splitContainer1.Size = new System.Drawing.Size(1038, 556);
+            this.splitContainer1.SplitterDistance = 476;
             this.splitContainer1.TabIndex = 34;
             // 
             // grcRecheckProcess
@@ -192,7 +192,7 @@
             this.grcRecheckProcess.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cboAreaCode,
             this.chkUseChk});
-            this.grcRecheckProcess.Size = new System.Drawing.Size(454, 556);
+            this.grcRecheckProcess.Size = new System.Drawing.Size(476, 556);
             this.grcRecheckProcess.TabIndex = 30;
             this.grcRecheckProcess.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvRecheckProcess});
@@ -374,7 +374,7 @@
             this.grcRecheckProcessDtl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1,
             this.repositoryItemCheckEdit1});
-            this.grcRecheckProcessDtl.Size = new System.Drawing.Size(530, 556);
+            this.grcRecheckProcessDtl.Size = new System.Drawing.Size(558, 556);
             this.grcRecheckProcessDtl.TabIndex = 31;
             this.grcRecheckProcessDtl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvRecheckProcessDtl});
@@ -713,7 +713,7 @@
             this.Controls.Add(this.grdShop);
             this.Name = "ReCheckProcess";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(998, 613);
+            this.Size = new System.Drawing.Size(1048, 613);
             ((System.ComponentModel.ISupportInitialize)(this.grdShop)).EndInit();
             this.grdShop.ResumeLayout(false);
             this.grdShop.PerformLayout();

@@ -1180,9 +1180,9 @@ public class Service : System.Web.Services.WebService
     #endregion
     #region 改变试卷类型的时候删除已经打分的题目
     [WebMethod]
-    public void DeleteAnserForError(string projectCode,string shopCode,string subjectCode)
+    public void DeleteAnserForError(string projectCode,string shopCode,string subjectCode,bool delChk)
     {
-        string sql = string.Format("exec [up_DSAT_DelErrorAnswer_D] '{0}','{1}','{2}'", projectCode, shopCode,subjectCode);
+        string sql = string.Format("exec [up_DSAT_DelErrorAnswer_D] '{0}','{1}','{2}','{3}'", projectCode, shopCode, subjectCode, delChk);
         DataSet ds = CommonHandler.query(sql);
     
     }

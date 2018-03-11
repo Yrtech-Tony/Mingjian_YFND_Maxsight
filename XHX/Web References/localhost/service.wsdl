@@ -2462,6 +2462,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delChk" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
