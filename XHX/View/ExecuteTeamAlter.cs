@@ -151,13 +151,13 @@ namespace XHX.View
 
             ExecuteTeamAlterDto dto = grvExecuteTeamAlter.GetRow(grvExecuteTeamAlter.FocusedRowHandle) as ExecuteTeamAlterDto;
             DataSet ds = service.GetShopRecheckStatus(dto.ProjectCode, dto.ShopCode);
-            List<string> strlistTotal = new List<string>();
+            //List<string> strlistTotal = new List<string>();
             List<string> strCurrent = new List<string>();
-            List<string> strLeft = new List<string>();
+           // List<string> strLeft = new List<string>();
 
-            strlistTotal.Add("流程演练");
-            strlistTotal.Add("人员和单据");
-            strlistTotal.Add("硬件");
+            //strlistTotal.Add("流程演练");
+            //strlistTotal.Add("人员和单据");
+            //strlistTotal.Add("硬件");
 
             
             int num = 0;
@@ -172,41 +172,41 @@ namespace XHX.View
                     }
                     
                 }
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    string statusCode = Convert.ToString(ds.Tables[0].Rows[i]["StatusCode"]);
-                    if (statusCode == "SA")
-                    {
-                        strCurrent.Add("流程演练");
-                    }
-                    if (statusCode == "SB")
-                    {
-                        strCurrent.Add("人员和单据");
-                    }
-                    if (statusCode == "SC")
-                    {
-                        strCurrent.Add("硬件");
-                    }
+                //for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                //{
+                //    string statusCode = Convert.ToString(ds.Tables[0].Rows[i]["StatusCode"]);
+                //    if (statusCode == "SA")
+                //    {
+                //        strCurrent.Add("流程演练");
+                //    }
+                //    if (statusCode == "SB")
+                //    {
+                //        strCurrent.Add("人员和单据");
+                //    }
+                //    if (statusCode == "SC")
+                //    {
+                //        strCurrent.Add("硬件");
+                //    }
                     
-                }
-                foreach (string item in strlistTotal)
-                {
-                    if (!strCurrent.Contains(item))
-                    {
-                        strLeft.Add(item);
-                    }
-                }
+                //}
+                //foreach (string item in strlistTotal)
+                //{
+                //    if (!strCurrent.Contains(item))
+                //    {
+                //        strLeft.Add(item);
+                //    }
+                //}
             }
-            string strleftResult = "";
-            foreach (string item in strLeft)
-            {
-                strleftResult += item + " ";
-            }
-            if (strCurrent.Count<3)
-            {
-                CommonHandler.ShowMessage(MessageType.Information, strleftResult + "没有复审完毕，不能提交复审修改完毕");
-                return;
-            }
+            //string strleftResult = "";
+            //foreach (string item in strLeft)
+            //{
+            //    strleftResult += item + " ";
+            //}
+            //if (strCurrent.Count<3)
+            //{
+            //    CommonHandler.ShowMessage(MessageType.Information, strleftResult + "没有复审完毕，不能提交复审修改完毕");
+            //    return;
+            //}
             if (num != 0)
             {
                 CommonHandler.ShowMessage(MessageType.Information, "已经提交过修改审核完毕申请，请不要重复提交!");
