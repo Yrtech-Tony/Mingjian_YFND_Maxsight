@@ -647,19 +647,20 @@ namespace XHX.View
 
             foreach (ShopDto shop in _shopDtoList)
             {
-                if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName))
+                if (!Directory.Exists(tbnFilePath.Text + @"\" + shop.ShopCode+"_"+ shop.ShopName))
                 {
-                    Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName);
+                    Directory.CreateDirectory(tbnFilePath.Text + @"\" + shop.ShopCode+"_"+shop.ShopName);
                 }
                 DataSet ds = service.SearchLossPicByShopCode(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString(), shop.ShopCode);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()))
+                        if (!Directory.Exists(tbnFilePath.Text + @"\" +  shop.ShopCode+"_"+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()))
                         {
-                            Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString());
+                            Directory.CreateDirectory(tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString());
                         }
+                        string fileFullName = "";
                         string[] picName = ds.Tables[0].Rows[i]["PicName"].ToString().Split(';');
                         //string lossDesc = ds.Tables[0].Rows[i]["LossDesc"].ToString();
                         if (picName.Length == 1)
@@ -670,7 +671,8 @@ namespace XHX.View
 
                                 MemoryStream buf = new MemoryStream(image);
                                 Image picimage = Image.FromStream(buf, true);
-                                picimage.Save(tbnFilePath.Text + @"\" + shop.ShopCode+"_"+shop.ShopName+ @"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+@"\"+ ds.Tables[0].Rows[i]["SubjectCode"].ToString()+"_1"+".jpg");
+                                 fileFullName = tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + ".jpg";
+                                picimage.Save(fileFullName);
                             }
                         }
                         else
@@ -682,7 +684,8 @@ namespace XHX.View
                                 {
                                     MemoryStream buf = new MemoryStream(image);
                                     Image picimage = Image.FromStream(buf, true);
-                                    picimage.Save(tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString()+"_"+(i+1).ToString() + ".jpg");
+                                    fileFullName = tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + "_" + (i + 1).ToString() + ".jpg";
+                                    picimage.Save(fileFullName);
                                 }
                             }
                         }
