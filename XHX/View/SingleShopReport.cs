@@ -684,7 +684,7 @@ namespace XHX.View
                                 {
                                     MemoryStream buf = new MemoryStream(image);
                                     Image picimage = Image.FromStream(buf, true);
-                                    fileFullName = tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + "_" + (i + 1).ToString() + ".jpg";
+                                    fileFullName = tbnFilePath.Text + @"\" + shop.ShopCode + "_" + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + "_" + (j + 1).ToString() + ".jpg";
                                     picimage.Save(fileFullName);
                                 }
                             }
