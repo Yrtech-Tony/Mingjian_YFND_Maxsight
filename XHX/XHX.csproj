@@ -1695,10 +1695,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://123.57.229.128/BMWServer/service.asmx">
+    <WebReferenceUrl Include="http://123.57.229.128/bmwserver/service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://123.57.229.128/BMWServer/service.asmx</UpdateFromURL>
+      <UpdateFromURL>http://123.57.229.128/bmwserver/service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

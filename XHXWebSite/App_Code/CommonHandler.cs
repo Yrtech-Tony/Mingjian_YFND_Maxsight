@@ -88,14 +88,17 @@ public class CommonHandler
     public static DataSet query(string sql)
     {
         DataSet ds = new DataSet(); //创建dataSet对象 
-        string ConnectionString = "Provider=sqloledb;Data Source=123.57.229.128;Initial Catalog=BMW;user id=sa;pwd=mxT1@mfb;";
+        string ConnectionString = "Provider=sqloledb;Data Source=123.57.229.128;Initial Catalog=BMW;user id=sa;pwd=mxT1@mfb;timeout=0";
         using (OleDbConnection conn = new OleDbConnection(ConnectionString))
         {
-            using (OleDbDataAdapter da = new OleDbDataAdapter(sql, conn))
+            OleDbCommand com = new OleDbCommand(sql,conn);
+            com.CommandTimeout = 300000;
+            using (OleDbDataAdapter da = new OleDbDataAdapter(com))
             {
                 try
                 {
                     conn.Open();
+                  
                     da.Fill(ds);//使用Fill()方法填充dataSet
                 }
                 catch (Exception ex)

@@ -23,6 +23,7 @@ namespace XHX.View
             InitializeComponent();
             BindComBox.BindProject(cboProject);
             toolTip = new ToolTip();
+            webService.Timeout = 3000000;
 
         }
         public void Search()
