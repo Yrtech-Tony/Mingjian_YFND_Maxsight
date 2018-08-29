@@ -45,6 +45,9 @@
             this.gcShopName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboAreaCode = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.chkUseChk = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtSubjectCode = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdShop)).BeginInit();
             this.grdShop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboProjects.Properties)).BeginInit();
@@ -56,12 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAreaCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkUseChk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubjectCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grdShop
             // 
             this.grdShop.Controls.Add(this.labelControl1);
             this.grdShop.Controls.Add(this.cboProjects);
+            this.grdShop.Controls.Add(this.simpleButton2);
             this.grdShop.Dock = System.Windows.Forms.DockStyle.Top;
             this.grdShop.Location = new System.Drawing.Point(5, 5);
             this.grdShop.Margin = new System.Windows.Forms.Padding(0);
@@ -90,10 +95,12 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.checkBox1);
+            this.groupControl2.Controls.Add(this.txtSubjectCode);
+            this.groupControl2.Controls.Add(this.simpleButton4);
             this.groupControl2.Controls.Add(this.simpleButton3);
             this.groupControl2.Controls.Add(this.labelControl2);
             this.groupControl2.Controls.Add(this.btnModule);
-            this.groupControl2.Controls.Add(this.simpleButton2);
             this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.tbnFilePath);
@@ -108,11 +115,11 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(783, 48);
+            this.simpleButton3.Location = new System.Drawing.Point(648, 48);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(102, 44);
+            this.simpleButton3.Size = new System.Drawing.Size(84, 44);
             this.simpleButton3.TabIndex = 94;
-            this.simpleButton3.Text = "下载照片";
+            this.simpleButton3.Text = "下载失分照片";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // labelControl2
@@ -140,7 +147,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(648, 49);
+            this.simpleButton2.Location = new System.Drawing.Point(513, -5);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(129, 44);
             this.simpleButton2.TabIndex = 91;
@@ -268,6 +275,32 @@
             this.chkUseChk.AutoHeight = false;
             this.chkUseChk.Name = "chkUseChk";
             // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(738, 48);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(87, 44);
+            this.simpleButton4.TabIndex = 101;
+            this.simpleButton4.Text = "下载标准照片";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(831, 49);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.TabIndex = 104;
+            this.checkBox1.Text = "按经销商";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // txtSubjectCode
+            // 
+            this.txtSubjectCode.Location = new System.Drawing.Point(831, 66);
+            this.txtSubjectCode.Name = "txtSubjectCode";
+            this.txtSubjectCode.Size = new System.Drawing.Size(108, 21);
+            this.txtSubjectCode.TabIndex = 103;
+            // 
             // SingleShopReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -291,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboAreaCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkUseChk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSubjectCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,5 +351,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ButtonEdit btnModule;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private DevExpress.XtraEditors.TextEdit txtSubjectCode;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

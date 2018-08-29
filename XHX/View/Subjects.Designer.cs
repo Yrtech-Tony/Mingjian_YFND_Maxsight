@@ -351,7 +351,6 @@
             this.gcCode.Caption = "代码";
             this.gcCode.FieldName = "ProjectCode";
             this.gcCode.Name = "gcCode";
-            this.gcCode.OptionsColumn.AllowEdit = false;
             this.gcCode.Visible = true;
             this.gcCode.VisibleIndex = 0;
             // 

@@ -1564,8 +1564,8 @@ public class Service : System.Web.Services.WebService
         string sql = String.Empty;
         if (statusType == 'I')
         {
-            sql = string.Format("EXEC up_DSAT_Projects_S '{0}','{1}','{2}','{3}','{4}','{5}'", year + quarter,
-                year + quarter, "sysadmin", year, quarter,orderNO);
+            sql = string.Format("EXEC up_DSAT_Projects_S '{0}','{1}','{2}','{3}','{4}','{5}'", projectCode,
+               projectCode, "sysadmin", year, quarter, orderNO);
         }
         else if (statusType == 'U')
         {

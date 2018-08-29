@@ -697,5 +697,72 @@ namespace XHX.View
             CommonHandler.ShowMessage(MessageType.Information, "生成完毕");
         }
 
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            if (tbnFilePath.Text == "")
+            {
+                CommonHandler.ShowMessage(MessageType.Information, "请选择\"数据路径\"");
+                tbnFilePath.Focus();
+                return;
+            }
+            _shopDtoList = new List<ShopDto>();
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                if (gridView1.GetRowCellValue(i, "CheckMarkSelection") != null && gridView1.GetRowCellValue(i, "CheckMarkSelection").ToString() == "True")
+                {
+                    _shopDtoList.Add(gridView1.GetRow(i) as ShopDto);
+                }
+            }
+            foreach (ShopDto shop in _shopDtoList)
+            {
+                if (checkBox1.Checked)
+                {
+                    if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName))
+                    {
+                        Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName);
+                    }
+                }
+                DataSet ds = service.SearchSubjectFile(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString(), txtSubjectCode.Text);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        string fileName = ds.Tables[0].Rows[i]["FileName"].ToString();
+                        if (checkBox1.Checked)
+                        {
+                            if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString()))
+                            {
+                                Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString());
+                            }
+                            byte[] image = service.SearchPicStream(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName, ds.Tables[0].Rows[i]["SubjectCode"].ToString(), fileName.Replace(".jpg", ""));
+                            if (image != null)
+                            {
+                                MemoryStream buf = new MemoryStream(image);
+                                Image picimage = Image.FromStream(buf, true);
+                                picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName + @"\" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + @"\" + fileName.Replace(".jpg", "") + ".jpg");
+                            }
+                        }
+                        else
+                        {
+                            if (!Directory.Exists(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString()))
+                            {
+                                Directory.CreateDirectory(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString());
+                            }
+                            byte[] image = service.SearchPicStream(CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + shop.ShopName, ds.Tables[0].Rows[i]["SubjectCode"].ToString(), fileName.Replace(".jpg", ""));
+                            if (image != null)
+                            {
+                                MemoryStream buf = new MemoryStream(image);
+                                Image picimage = Image.FromStream(buf, true);
+                                picimage.Save(tbnFilePath.Text + @"\" + CommonHandler.GetComboBoxSelectedValue(cboProjects).ToString() + @"\" + shop.ShopCode + "_" + ds.Tables[0].Rows[i]["SubjectCode"].ToString() + "_" + fileName.Replace(".jpg", "") + ".jpg");
+                            }
+                        }
+
+                    }
+                }
+
+            }
+            CommonHandler.ShowMessage(MessageType.Information, "生成完毕");
+        }
+
     }
 }
